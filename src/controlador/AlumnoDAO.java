@@ -33,7 +33,8 @@ public class AlumnoDAO {
 	}
 	
 	public boolean modificarAlumno(Alumno a1) {
-		String sql = "UPDATE Alumnos SET NumControl='"+a1.getNumControl()+"', Nombre='"+a1.getNombre()+"', PrimerAp='"+a1.getPrimerAp()+"', SegundoAp='"+a1.getSegundoAp()+"', Edad="+a1.getEdad()+", Semestre="+a1.getSemestre()+", Carrera='"+a1.getCarrera()+"' WHERE NumControl='"+a1.getNumControl()+"'";
+		String sql = "UPDATE Alumnos SET NumControl='"+a1.getNumControl()+"', Nombre='"+a1.getNombre()+"', PrimerAp='"+a1.getPrimerAp()+
+				"', SegundoAp='"+a1.getSegundoAp()+"', Edad="+a1.getEdad()+", Semestre="+a1.getSemestre()+", Carrera='"+a1.getCarrera()+"' WHERE NumControl='"+a1.getNumControl()+"'";
 		
 		ConexionBD conexion = new ConexionBD();
 		return conexion.ejecutarInstruccion(sql);
@@ -66,7 +67,7 @@ public class AlumnoDAO {
 	
 	// ==================================== BUSCAR MULTIPLES REGISTRO ====================================
 	
-	public ArrayList<Alumno> buscarAlumnos(String filtro) {
+	public ArrayList<Alumno> buscarAlumnos(String filtro,String value) {
 		ArrayList<Alumno> listaAlumnos = new ArrayList<Alumno>();
 		
 		//RECORRER el ResultSet mientras haya registros
@@ -74,10 +75,9 @@ public class AlumnoDAO {
 		
 		//rs.first()
 		
-		String sql = "SELECT * FROM Alumnos WHERE EDAD ='19';";
+		String sql = "SELECT * FROM Alumnos WHERE "+filtro+" ="+value+";";
 		ConexionBD conexion = new ConexionBD();
 		ResultSet rs = conexion.ejecutarConsultaRegistros(sql);
-		
 		
 		try {
 			rs.first();
@@ -97,8 +97,6 @@ public class AlumnoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
 		return listaAlumnos;
 	}
 	

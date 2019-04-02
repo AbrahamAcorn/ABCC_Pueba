@@ -16,6 +16,8 @@ public class VentanaInicio extends JFrame {
 	}
 	
 	JInternalFrame frameAltas, frameBajas, frameModificaciones, frameConsultas;
+	private JButton btnCancelar3;
+	private JButton btnBuscar3;
 	
 	public void crearComponentes() {
 		getContentPane().setLayout(new BorderLayout());
@@ -534,7 +536,7 @@ public class VentanaInicio extends JFrame {
 			btnRestablecer3.setBounds(480, 170, 135, 25);
 			panel10.add(btnRestablecer3);
 			
-			JButton btnCancelar3 = new JButton("CERRAR");
+			btnCancelar3 = new JButton("CERRAR");
 			btnCancelar3.setFont(f2);
 			btnCancelar3.setBounds(480, 110, 135, 25);
 			btnCancelar3.addActionListener(new ActionListener() {
@@ -670,7 +672,7 @@ public class VentanaInicio extends JFrame {
 			cboCarrera4.setBounds(280, 270, 176, 23);
 			panel13.add(cboCarrera4);
 			
-			JButton btnBuscar3 = new JButton(new ImageIcon("Iconos/Buscar.png"));
+			btnBuscar3 = new JButton(new ImageIcon("Iconos/Buscar.png"));
 			btnBuscar3.setBounds(480, 85, 135, 45);
 			panel13.add(btnBuscar3);
 			
@@ -740,7 +742,8 @@ public class VentanaInicio extends JFrame {
 				new VentanaInicio();
 			}
 		});
-		
+		//++++++HAY QUE DECLARAR TODOS LOS COMPONENTES DEL FRAME ANTES DE QUE LOS INSTANCIE
+		//FALTA AGREGAR 
 		/*
 		public Alumno(String numControl, String nombre, String primerAp, 
 		String segundoAp, byte edad, byte semestre, String carrera)
