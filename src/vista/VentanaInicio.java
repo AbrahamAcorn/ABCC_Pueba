@@ -482,7 +482,7 @@ public class VentanaInicio extends JFrame {
 			lblApePaterno3.setFont(f2);
 			lblApePaterno3.setBounds(100, 70, 300, 25);
 			panel10.add(lblApePaterno3);
-			
+		//pepe	
 			JTextField txtApePaterno3 = new JTextField(10);
 			txtApePaterno3.setFont(f2);
 			txtApePaterno3.setBounds(280, 70, 176, 23);
